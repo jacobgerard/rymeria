@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div id="admin" class="box vertical">
+        <div class="vspace">
+            <a href="/accounts">
+                <button class="inline-button">
+                    Accounts
+                </button>
+            </a>
+        </div>
+        <div class="vspace">
+            <a href="/categories">
+                <button class="inline-button">
+                    Categories
+                </button>
+            </a>
+        </div>
+        <div class="vspace">
+            <a href="/tags">
+                <button class="inline-button">
+                    Tags
+                </button>
+            </a>
+        </div>
+        <div class="vspace">
+            <a href="/charting">
+                <button class="inline-button">
+                    Charting
+                </button>
+            </a>
+        </div>
+        <div class="vspace">
+            <a href="/submitcsv">
+                <button class="inline-button">
+                    Submit CSV Expenses
+                </button>
+            </a>
+        </div>
+        <div class="vspace">
+            <a href="/retrievecsv">
+                <button class="inline-button">
+                    Retrieve CSV Expenses
+                </button>
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div id="controller" class="controller box vertical">
+        <label class="block">File</label>
+        <input id="csv" type="file" class="input"></input>
+        <label class="block">Submit</label>
+        <button id="submit-csv" class="inline-button">
+            Submit
+        </button>
+    </div>
+
+    <div id="submission" class="vertical">
+    </div>
+</main>
+{% endblock %}

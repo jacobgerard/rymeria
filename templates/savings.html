@@ -1,0 +1,69 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div id="controller" class="controller box vertical">
+        <label class="block">From</label>
+        <input id="from-date" type="date" class="input date"></input>
+        <label class="block">To</label>
+        <input id="to-date" type="date" class="input date"></input>
+        <label class="block">Submit</label>
+        <button id="query-savings" class="inline-button">
+            Submit
+        </button>
+    </div>
+
+    <div class="controller box vertical">
+        <div class="horizontal">
+            <button id="add-goal" class="inline-button">
+                Update
+            </button>
+            <button id="fund-value" class="inline-button">
+                {{fund}}
+            </button>
+            <button id="fund-difference" class="inline-button">
+                {{difference}}
+            </button>
+        </div>
+        <div id="per-month" class="horizontal vspace-top">
+            <label class="block">Per Month Savings</label>
+            <input type="text" class="input" value="{{permonth}}"></label>
+        </div>
+    </div>
+
+    <div>
+        <table>
+            <colgroup>
+                <col span="1" style="width:20%;">
+                <col span="1" style="width:30%;">
+                <col span="1" style="width:25%;">
+                <col span="1" style="width:25%;">
+            </colgroup>
+            <thead>
+                <th>Goal Date</th>
+                <th>Goal</th>
+                <th class="right">Goal Amount</th>
+                <th class="right">Current Amount</th>
+            </thead>
+
+            <tbody id="goal-list">
+                {% for row in goallist %}
+                <tr id="{{row['id']}}">
+                    <td>
+                        <input type="date" class="input date goal-date" value="{{row['due_date']}}"></input>
+                    </td>
+                    <td>
+                        <input type="text" class="input goal" value="{{row['goal']}}"></input>
+                    </td>
+                    <td>
+                        <input type="text" class="input goal-amount right" value="{{row['goal_amount']}}"></input>
+                    </td>
+                    <td>
+                        <input type="text" class="input amount right" value="{{row['amount']}}"></input>
+                    </td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

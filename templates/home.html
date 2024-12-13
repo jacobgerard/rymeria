@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div class="controller box horizontal">
+        <button id="add-expense" class="big-button">
+            Add
+        </button>
+        <button id="submit-expenses" class="big-button">
+            Submit
+        </button>
+        <button id="clear-expenses" class="big-button">
+            Clear
+        </button>
+    </div>
+
+    <div id="insert-expenses">
+        <div class="box horv">
+            <div class="label">
+                <label class="block">Date</label>
+                <input type="date" class="input date"></input>
+            </div>
+            <div class="label">
+                <label class="block">Item</label>
+                <input type="text" class="input item"></input>
+            </div>
+            <div class="label">
+                <label class="block">Category</label>
+                <select class="select input category">
+                </select>
+            </div>
+            <div class="horizontal">
+                <div class="even label">
+                    <label class="block">Amount</label>
+                    <input type="text" class="shrink-input block amount"></input>
+                </div>
+                <div class="even label">
+                    <label class="block">Delete</label>
+                    <button class="inline-button">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

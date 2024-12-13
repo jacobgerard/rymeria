@@ -1,0 +1,85 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div class="controller box vertical">
+        <div class="horizontal">
+            <button id="add-accounts" class="big-button">
+                Add
+            </button>
+            <button id="submit-accounts" class="big-button">
+                Submit
+            </button>
+            <button id="clear-accounts" class="big-button">
+                Clear
+            </button>
+        </div>
+    </div>
+
+    <div id="insert-accounts">
+    </div>
+
+    <div id="update" class="controller box vertical">
+        <button id="update-accounts" class="inline-button">
+            Update
+        </button>
+    </div>
+
+    <div id="accounts" class="vertical">
+        <table class="">
+            <colgroup>
+                <col span="1" style="width:40%;">
+                <col span="1" style="width:15%;">
+                <col span="1" style="width:15%;">
+                <col span="1" style="width:10%;">
+                <col span="1" style="width:10%;">
+                <col span="1" style="width:10%;">
+            </colgroup>
+            <thead>
+                <th>Account</th>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Retirement</th>
+                <th>Savings</th>
+                <th>Inactive?</th>
+            </thead>
+            <tbody>
+                {% for row in accounts %}
+                <tr id="{{row['id']}}">
+                    <td>
+                        <input type="text" class="input account" value="{{row['account']}}">
+                    </td>
+                    <td>
+                        <input type="text" class="input type" value="{{row['type']}}">
+                    </td>
+                    <td>
+                        <input type="text" class="input priority" value="{{row['priority']}}">
+                    </td>
+                    <td class="center checkbox">
+                        {% if row['retirement'] == 1 %}
+                        <input type="checkbox" class="retirement" name="retirement" checked>
+                        {% else %}
+                        <input type="checkbox" class="retirement" name="retirement">
+                        {% endif %}
+                    </td>
+                    <td class="center checkbox">
+                        {% if row['savings'] == 1 %}
+                        <input type="checkbox" class="savings" name="savings" checked>
+                        {% else %}
+                        <input type="checkbox" class="savings" name="savings">
+                        {% endif %}
+                    </td>
+                    <td class="center checkbox">
+                        {% if row['inactive'] == 1 %}
+                        <input type="checkbox" class="inactive" name="inactive" checked>
+                        {% else %}
+                        <input type="checkbox" class="inactive" name="inactive">
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

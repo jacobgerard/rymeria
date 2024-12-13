@@ -1,0 +1,49 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div id="controller" class="controller box vertical">
+        <label class="block">From</label>
+        <input id="from-date" type="date" class="input date"></input>
+        <label class="block">To</label>
+        <input id="to-date" type="date" class="input date"></input>
+        <label class="block">Category</label>
+        <select id="categoryid" class="select categoryselect input category">
+            <option value="0">All</option>
+        </select>
+        <label class="block">Tag</label>
+        <select id="tagid" class="select tagselect input tag">
+            <option value="0">All</option>
+        </select>
+        <label class="block">Submit</label>
+        <button id="query-expenses" class="inline-button">
+            Submit
+        </button>
+    </div>
+
+    <div id="update" class="controller box vertical">
+        <button id="update-expenses" class="inline-button">
+            Update
+        </button>
+    </div>
+
+    <div id="tagmode" class="controller box vertical">
+        <button id="tag-mode" class="inline-button">
+            Tag Mode
+        </button>
+    </div>
+
+    <div id="expenses" class="vertical">
+    </div>
+    
+</main>
+
+<div id="modal" class="modal">
+    <div class="box vertical cover">
+        <div id="tags" class="vertical">
+        </div>
+        <button id="close-modal" class="inline-button">X</button>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div class="controller box horizontal">
+        <button id="add-income" class="big-button">
+            Add
+        </button>
+        <button id="submit-income" class="big-button">
+            Submit
+        </button>
+        <button id="clear-income" class="big-button">
+            Clear
+        </button>
+    </div>
+
+    <div id="insert-income">
+    </div>
+
+    <div id="controller" class="controller box vertical">
+        <label class="block">From</label>
+        <input id="from-date" type="date" class="input date"></input>
+        <label class="block">To</label>
+        <input id="to-date" type="date" class="input date"></input>
+        <label class="block">Submit</label>
+        <button id="query-income" class="inline-button">
+            Submit
+        </button>
+    </div>
+
+    <div id="income" class="vertical">
+    </div>
+</main>
+{% endblock %}

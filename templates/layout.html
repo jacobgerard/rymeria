@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rymeria</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <script src="{{ url_for('static', filename=script) }}" defer></script>
+    </head>
+
+    <body class="mobile">
+        <header>
+            <a href="/">
+                <h1 class="center navy">Rymeria</h1>
+            </a>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        {% include 'footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{
+    "name": "Rymeria",
+    "file-path": "/some/directory/database.db",
+    "start-year": 2015,
+    "categories": {
+        "Assets": [
+            "Savings",
+            "Brokerage"
+        ],
+        "Liabilities": [
+            "Rent",
+            "Bills"
+        ]
+    },
+    "accounts": {
+        "Assets": [
+            "Sofi",
+            "Schwab"
+        ],
+        "Liabilities": [
+            "Credit Card",
+            "Loan"
+        ]
+    },
+    "savings": [
+        "Vacation",
+        "House"
+    ]
+}

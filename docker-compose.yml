@@ -1,0 +1,9 @@
+services:
+  rymeria:
+    image: rymeria:latest
+    container_name: rymeria-instance
+    restart: always
+    ports:
+      - "8080:5000"
+    volumes:
+      - /some/directory/database.db:/sqlite/simple.db:Z

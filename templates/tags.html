@@ -1,0 +1,57 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div class="controller box vertical">
+        <div class="horizontal">
+            <button id="add-tags" class="big-button">
+                Add
+            </button>
+            <button id="submit-tags" class="big-button">
+                Submit
+            </button>
+            <button id="clear-tags" class="big-button">
+                Clear
+            </button>
+        </div>
+    </div>
+
+    <div id="insert-tags">
+    </div>
+
+    <div id="update" class="controller box vertical">
+        <button id="update-tags" class="inline-button">
+            Update
+        </button>
+    </div>
+
+    <div id="tags" class="vertical">
+        <table class="">
+            <colgroup>
+                <col span="1" style="width:90%;">
+                <col span="1" style="width:10%;">
+            </colgroup>
+            <thead>
+                <th>Tag</th>
+                <th>Inactive?</th>
+            </thead>
+            <tbody>
+                {% for row in tags %}
+                <tr id="{{row['id']}}">
+                    <td>
+                        <input type="text" class="input tag" value="{{row['text']}}">
+                    </td>
+                    <td class="center checkbox">
+                        {% if row['inactive'] == 1 %}
+                        <input type="checkbox" class="inactive" name="inactive" checked>
+                        {% else %}
+                        <input type="checkbox" class="inactive" name="inactive">
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

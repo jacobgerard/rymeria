@@ -1,0 +1,67 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div class="controller box vertical">
+        <div class="horizontal">
+            <button id="add-category" class="big-button">
+                Add
+            </button>
+            <button id="submit-categories" class="big-button">
+                Submit
+            </button>
+            <button id="clear-categories" class="big-button">
+                Clear
+            </button>
+        </div>
+    </div>
+
+    <div id="insert-categories">
+    </div>
+
+    <div id="update" class="controller box vertical">
+        <button id="update-categories" class="inline-button">
+            Update
+        </button>
+    </div>
+
+    <div id="categories" class="vertical">
+        <table class="">
+            <colgroup>
+                <col span="1" style="width:55%;">
+                <col span="1" style="width:15%;">
+                <col span="1" style="width:15%;">
+                <col span="1" style="width:15%;">
+            </colgroup>
+            <thead>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Inactive?</th>
+            </thead>
+            <tbody>
+                {% for row in categories %}
+                <tr id="{{row['id']}}">
+                    <td>
+                        <input type="text" class="input category" value="{{row['category']}}">
+                    </td>
+                    <td>
+                        <input type="text" class="input type" value="{{row['type']}}">
+                    </td>
+                    <td>
+                        <input type="text" class="input priority" value="{{row['priority']}}">
+                    </td>
+                    <td class="center checkbox">
+                        {% if row['inactive'] == 1 %}
+                        <input type="checkbox" class="inactive" name="inactive" checked>
+                        {% else %}
+                        <input type="checkbox" class="inactive" name="inactive">
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

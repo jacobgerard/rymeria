@@ -1,0 +1,55 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<main class="squeeze">
+    <div id="controller" class="controller box vertical">
+        <div class="horizontal">
+            
+            <div class="even">
+                <label class="block">Year</label>
+                <select id="year" class="select input year shrink-input">
+                    {% for year in years %}
+                    <option value="{{year}}">{{year}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="even">
+                <label class="block">Month</label>
+                <select id="month" class="select input month">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+        </div>
+        <label class="block">Submit</label>
+        <button id="query-budget" class="inline-button">
+            Submit
+        </button>
+    </div>
+
+    <div id="newbudget" class="hidden controller box vertical">
+        <button id="new-budget" class="inline-button">
+            New
+        </button>
+    </div>
+
+    <div id="update" class="hidden controller box vertical">
+        <button id="update-budget" class="inline-button">
+            Update
+        </button>
+    </div>
+
+    <div id="budget" class="vertical">
+    </div>
+</main>
+{% endblock %}
