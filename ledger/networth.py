@@ -99,8 +99,8 @@ def get_networth_accounts(period):
 
 
 def update_goal(goal):
-    amt = money.dollars_to_cents(goal['amount'])
-    goal_amt = money.dollars_to_cents(goal['goal-amount'])
+    amt = dollars_to_cents(goal['amount'])
+    goal_amt = dollars_to_cents(goal['goal-amount'])
     print(goal['goal-date'])
     sql = (
         'UPDATE goals SET goal = (?), '

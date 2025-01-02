@@ -1,7 +1,7 @@
 {
     "name": "Rymeria",
-    "file-path": "/some/directory/database.db",
-    "start-year": 2015,
+    "file-path": "/home/gerard/finances/simple.db",
+    "start-year": 2020,
     "categories": {
         "Assets": [
             "Savings",

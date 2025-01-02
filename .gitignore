@@ -2,7 +2,6 @@ venv/
 __pycache__/
 *.swp
 database/*
-static/montserrat/
 testing/
 *.sock
 *.log
