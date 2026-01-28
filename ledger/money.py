@@ -10,6 +10,14 @@ def cents_to_dollars(cents):
     return '{0}.{1:02d}'.format(cents // 100, cents % 100)
 
 
+# Comma separated number string
+def cents_to_comma_dollars(cents):
+    cents = int(cents)
+    if cents < 0:
+        return '{0:,}.{1:02d}'.format(0 - (abs(cents) // 100), abs(cents) % 100)
+    return '{0:,}.{1:02d}'.format(cents // 100, cents % 100)
+
+
 # Returns an int of the total cents from a string decimal
 def dollars_to_cents(dollars):
     if type(dollars) is not str or dollars == '.' or dollars == '':
